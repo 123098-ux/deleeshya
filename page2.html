@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>what's your energy</title>
+  <style>
+    body {
+      background: linear-gradient(to right, lightblue);
+      font-family: "Times New Roman", Times, serif;
+      color: black;
+      text-align: center;
+      padding-top: 50px;
+	    }
+    button {
+      background-color: #ffb6c1;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #5a2a37;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+	
+
+     </style>
+</head>
+<body>
+  <h1>Let your feelings unleash</h1>
+  <button onclick="goToPlaylist('happy')">Happy 😊</button>
+  <button onclick="goToPlaylist('relaxed')">Relaxed 😌</button>
+  <button onclick="goToPlaylist('energetic')">Energetic ⚡</button>
+  <button onclick="goToPlaylist('sad')">Sad 😢</button>
+
+  <script>
+    function goToPlaylist(mood) {
+      let url = "";
+      switch(mood) {
+        case 'happy':
+          url = "https://open.spotify.com/playlist/happy_playlist_id";
+          break;
+        case 'relaxed':
+          url = "https://open.spotify.com/playlist/1fHGclklznQ8BJNzL6XmmU?si=114cb216d79941ae&pt=bd83bdc56cf852bb93ebf76d27103584";     
+	 break;
+        case 'energetic':
+          url = "https://open.spotify.com/playlist/1QU7qF7DSU7mnsN5z9hEHo?si=6e70ed7fb371440a&pt=b736f161ea470f30bfa72cbe22e22beb";
+          break;
+        case 'sad':
+          url = "https://open.spotify.com/playlist/sad_playlist_id";
+          break;
+        default:
+          url = "https://open.spotify.com/playlist/default_playlist_id";
+      }
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
+

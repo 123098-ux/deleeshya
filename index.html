@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <style>
+    body {
+      background: linear-gradient(to right, lavenderblush, lightpink, pink);
+      font-family: 'Times New Roman', sans-serif;
+      text-align: center;
+      padding-top: 20%;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+    #time {
+      font-size: 2em;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="greeting">Good day!</h1>
+  <div id="time">--:--:--</div>
+<a href="page2.html">wanna listen to music </a>
+  <script>
+    function updateTimeAndGreeting() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      let greeting = "Good day";
+      if (hours < 12) greeting = "Good morning";
+      else if (hours < 18) greeting = "Good afternoon";
+      else greeting = "Good evening";
+
+      document.getElementById("greeting").textContent = ` heyy!!💕${greeting}`;
+      document.getElementById("time").textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTimeAndGreeting, 1000);
+    updateTimeAndGreeting(); // call it immediately too
+    
+
+  </script>
+</body>
+</html>
